@@ -1,8 +1,8 @@
-package viking.war.test;
+package viking.war.test.generator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import viking.war.RandomMapGenerator;
+import viking.war.generator.RandomMapGenerator;
 
 public class RandomMapGeneratorTest {
 

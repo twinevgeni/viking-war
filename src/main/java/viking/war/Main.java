@@ -1,5 +1,7 @@
 package viking.war;
 
+import viking.war.generator.RandomMapGenerator;
+
 import java.util.HashMap;
 import java.util.Map;
 

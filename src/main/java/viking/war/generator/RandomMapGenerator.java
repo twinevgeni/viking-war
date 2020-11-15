@@ -1,4 +1,4 @@
-package viking.war;
+package viking.war.generator;
 
 import viking.war.objects.*;
 
