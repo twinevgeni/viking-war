@@ -21,7 +21,7 @@ public class Main {
     /**
      * Default arg values
      **/
-    static final int ARG_VAL_N = 5;
+    static final int ARG_VAL_N = 3;
     static final int ARG_VAL_RANDOM = 15;
 
 
