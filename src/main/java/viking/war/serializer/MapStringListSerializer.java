@@ -28,31 +28,32 @@ public class MapStringListSerializer
 
         for (final IIsland island : map.getIslandList())
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(String.format(SCHEMA_ISLAND, island.getID()));
+            if (island.isLighthouse()) {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(String.format(SCHEMA_ISLAND, island.getID()));
 
-            for (final Map.Entry<Direction, IIsland> way : island.getWays().entrySet()) {
-                String directionStr = "";
-                switch (way.getKey())
-                {
-                    case EAST:
-                        directionStr = KEY_EAST;
-                        break;
-                    case NORTH:
-                        directionStr = KEY_NORTH;
-                        break;
-                    case SOUTH:
-                        directionStr = KEY_SOUTH;
-                        break;
-                    case WEST:
-                        directionStr = KEY_WEST;
-                        break;
+                for (final Map.Entry<Direction, IIsland> way : island.getWays().entrySet()) {
+                    String directionStr = "";
+                    switch (way.getKey()) {
+                        case EAST:
+                            directionStr = KEY_EAST;
+                            break;
+                        case NORTH:
+                            directionStr = KEY_NORTH;
+                            break;
+                        case SOUTH:
+                            directionStr = KEY_SOUTH;
+                            break;
+                        case WEST:
+                            directionStr = KEY_WEST;
+                            break;
+                    }
+
+                    stringBuilder.append(String.format(SCHEMA_WAY, directionStr, way.getValue().getID()));
                 }
 
-                stringBuilder.append(String.format(SCHEMA_WAY, directionStr, way.getValue().getID()));
+                strings.add(stringBuilder.toString());
             }
-
-            strings.add(stringBuilder.toString());
         }
 
         return strings;
