@@ -17,13 +17,12 @@ public class Main {
     static final String ARG_N = "-N";
     static final String ARG_RANDOM = "-random";
     static final String ARG_MAP = "-map";
-    static final String ARG_MAP_FILE = "-mapfile";
 
     /**
      * Default arg values
      **/
     static final int ARG_VAL_N = 5;
-    static final int ARG_VAL_RANDOM = 25;
+    static final int ARG_VAL_RANDOM = 15;
 
 
     private static Map<String, String> readArgs(String[] args) {
@@ -79,6 +78,8 @@ public class Main {
             mapLoader = new RandomMapLoader(islandsCount, out);
         } else if (argsMap.containsKey(ARG_MAP)) {
             mapLoader = new ResourceMapLoader(argsMap.get(ARG_MAP), out);
+        } else {
+            mapLoader = new RandomMapLoader(ARG_VAL_RANDOM, out);
         }
 
         try {
