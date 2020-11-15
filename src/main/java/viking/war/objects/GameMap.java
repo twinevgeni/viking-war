@@ -68,9 +68,11 @@ public class GameMap extends GameObject implements IGameMap {
      */
     @Override
     public void removeWay(IIsland islandFrom, Direction directionFrom) {
-        IIsland islandTo = islandFrom.getWay(directionFrom);
-        islandFrom.removeWay(directionFrom);
-        islandTo.removeWay(directionFrom.getOpposite());
+        if (islandFrom.wayExists(directionFrom)) {
+            IIsland islandTo = islandFrom.getWay(directionFrom);
+            islandFrom.removeWay(directionFrom);
+            islandTo.removeWay(directionFrom.getOpposite());
+        }
     }
 
     /**
@@ -82,7 +84,7 @@ public class GameMap extends GameObject implements IGameMap {
         IIsland foundIsland = this.getIslandByID(islandId);
         if (foundIsland != null)
         {
-            this.destroyLighthouse(islandId);
+            this.destroyLighthouse(foundIsland);
         }
     }
 

@@ -11,13 +11,13 @@ import java.util.Random;
  */
 public class RandomMapGenerator {
 
-    static final int DEFAULT_ISLANDS_COUNT = 5;
+    static final int DEFAULT_ISLANDS_COUNT = 25;
 
-    public int islandCount;
-    public Random rnd;
+    private final int islandCount;
+    private final Random rnd;
 
-    public boolean[][] mesh;
-    public int[][] islandsMesh;
+    private boolean[][] mesh;
+    private int[][] islandsMesh;
     public IGameMap gameMap;
 
     public RandomMapGenerator()
@@ -119,8 +119,8 @@ public class RandomMapGenerator {
 
     public void meshGenerate()
     {
-        int X = 3;
-        int Y = islandCount % 2 == 0 ? islandCount / 2 : (islandCount / 2) + 1;
+        int X = (int)Math.floor(Math.sqrt(islandCount)) + 1;
+        int Y = (int)Math.floor(Math.sqrt(islandCount)) + 1;
         this.mesh = meshFill(meshCreate(X,Y));
     }
 
