@@ -23,4 +23,4 @@ You can use following arguments
 examples:
 - `./vikingwar -map=map1.txt -N=4`
 - `./vikingwar -random -N=4`
-- `./vikingwar -random=25 -N=150`
+- `./vikingwar -random=25 -N=20`
