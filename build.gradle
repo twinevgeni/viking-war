@@ -3,6 +3,9 @@ apply plugin: 'application'
 
 mainClassName = "viking.war.Main"
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 repositories {
     mavenCentral()
 }
@@ -12,7 +15,7 @@ compileJava {
 }
 
 dependencies {
-    implementation("com.google.guava:guava:15.0")
+    implementation("com.google.guava:guava:30.0-jre")
     testImplementation(platform('org.junit:junit-bom:5.7.0'))
     testImplementation('org.junit.jupiter:junit-jupiter')
 }
