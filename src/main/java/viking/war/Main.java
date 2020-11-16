@@ -88,8 +88,6 @@ public class Main {
             }
 
             IGameMap gameMap = mapLoader.Load();
-            out.println("|--- Загружена карта ---|");
-            out.println(new MapStringSerializer().serialize(gameMap));
 
 
             new RandomVikingGenerator(gameMap, vikingsCount).generate();
