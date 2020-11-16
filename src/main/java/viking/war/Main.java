@@ -91,6 +91,7 @@ public class Main {
             out.println("|--- Загружена карта ---|");
             out.println(new MapStringSerializer().serialize(gameMap));
 
+
             new RandomVikingGenerator(gameMap, vikingsCount).generate();
             GameController controller = new GameController(gameMap, out);
 
